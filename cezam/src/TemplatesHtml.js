@@ -1,5 +1,5 @@
 const ChannelHeadTemplate = (channel_header) => {
-    return '<h3 class="cezam_header"> '+channel_header['title']+' </h3>'+
+    return '<h3 class="cezam_header"><img src="'+channel_header['thumb']+'" class="head_thumb"> '+channel_header['title']+' '+((parseInt(channel_header['badge']) > 0) ? '('+channel_header['badge']+')' : '')+'</h3>'+
             '<input type="text" id="filter_'+channel_header['id']+'" class="sub_filter" onkeyup="Filter(\'filter_'+channel_header['id']+'\')" placeholder="Search on '+channel_header['title']+'...."/>';
 }
 
@@ -32,7 +32,7 @@ const ItemTemplate = (channel_item) => {
                         SliderList(channel_item['items'])+
                     '</div>'+
                 '</div>'+
-            '</div>';
+            '</div><hr>';
 }
 
 const CezamTemplate = (channel_array) => {

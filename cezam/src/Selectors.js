@@ -5,11 +5,12 @@ const Selectors = {
     },
     "messageList":{
         "type":"node",
-        "selector":"div.im_history_col_wrap"
+        "selector":"div.im_history_col_wrap div.im_history_scrollable_wrap"
     },
     "discussionItem":{
         "type":"node",
         "selector": "li.im_dialog_wrap",
+        "trigger": "a.im_dialog",
         "child":{
             "thumb":{
                 "type":"attribute",
