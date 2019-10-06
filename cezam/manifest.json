@@ -1,6 +1,6 @@
 {
   "name": "Cezam",
-  "description": "An alternative version of Telegram, but like a Room Cinema!",
+  "description": "An alternative version of Telegram, but like a Room Gallery!",
   "version": "1.0",
   "permissions": [
       "activeTab"

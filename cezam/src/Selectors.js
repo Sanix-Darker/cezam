@@ -1,15 +1,15 @@
 const Selectors = {
     "discussionList":{
         "type":"node",
-        "selector":"div.im_dialogs_col div.im_dialogs_col"
+        "selector":"body div.im_dialogs_col div.im_dialogs_col"
     },
     "messageList":{
         "type":"node",
-        "selector":"div.im_history_col_wrap div.im_history_scrollable_wrap"
+        "selector":"body div.im_history_col_wrap div.im_history_scrollable_wrap"
     },
     "discussionItem":{
         "type":"node",
-        "selector": "li.im_dialog_wrap",
+        "selector": "body li.im_dialog_wrap",
         "trigger": "a.im_dialog",
         "child":{
             "thumb":{
@@ -84,6 +84,6 @@ const Selectors = {
     },
     "globalSearchBox":{
         "type":"node",
-        "selector": "input[type='search'].im_dialogs_search_field"
+        "selector": "body input[type='search'].im_dialogs_search_field"
     }
 }
