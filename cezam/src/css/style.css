@@ -9,9 +9,15 @@
   flex-direction: row;
   align-items: left;
   width: 100%;
+  max-height: 100px;
+  overflow: auto;
 }
 #cezam_content * {
   box-sizing: border-box;
+}
+
+#cezam_content h1, #cezam_content h2, #cezam_content .cezam_header{
+  color:white!important;
 }
 #cezam_content h1,
 #cezam_content p {
@@ -100,7 +106,7 @@
   z-index: 1;
 }
 #cezam_content .tile__details:before {
-  content: '▶';
+  content: '';
   left: 0;
   width: 100%;
   font-size: 30px;
@@ -155,4 +161,52 @@
   font-size: 20px;
   width:auto;
   outline: none;
+}
+#Cezam_button_start{
+  font-size: 15px;
+	padding: 10px;
+	transition: all 0.3s;
+	cursor:pointer;
+	border:0px;
+	position: fixed;
+	z-index: 99999!important;
+	bottom: 2%;
+	left: 2%;
+	color:white;
+	background:rgb(24, 83, 211);
+	box-shadow: 0 4px 9px rgba(0,0,0,0.7);
+}
+
+#Cezam_button_start span{
+	display: none;
+	transition: all 0.25s;
+}
+
+#Cezam_button_start:hover span{
+	display: inline-block;
+	transition: all 0.25s;
+}
+
+#Cezam_button_start:hover{
+	font-size: 20px;
+	padding: 15px;
+	transition: all 0.15s;
+}
+
+
+#author{
+  text-shadow: 0 3px 4px rgba(0,0,0,0.45);
+  position: fixed;
+  bottom: 8px;
+  right : 8px;
+  font-size: 10px;
+}
+#author img{
+  box-shadow: 0 3px 4px rgba(0,0,0,0.45);
+  border-radius:100%;
+  width: 80%;
+}
+#author a{
+  color:black;
+  text-decoration: none;
 }

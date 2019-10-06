@@ -10,7 +10,7 @@
     "48": "img/icon-48.png"
   },
   "background": {
-    "scripts": ["src/Selectors.js","src/TemplatesHtml.js","src/Cezam.js"],
+    "scripts": ["src/Cezam.js"],
     "persistent": false
   },
   "author": "Sanix darker",

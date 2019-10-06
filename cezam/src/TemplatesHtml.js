@@ -1,5 +1,5 @@
 const ChannelHeadTemplate = (channel_header) => {
-    return '<h1> '+channel_header['title']+' </h1>'+
+    return '<h3 class="cezam_header"> '+channel_header['title']+' </h3>'+
             '<input type="text" id="filter_'+channel_header['id']+'" class="sub_filter" onkeyup="Filter(\'filter_'+channel_header['id']+'\')" placeholder="Search on '+channel_header['title']+'...."/>';
 }
 
@@ -36,11 +36,18 @@ const ItemTemplate = (channel_item) => {
 }
 
 const CezamTemplate = (channel_array) => {
-    let render = '<h2>Cezam. <input type="text" id="global_search"class="filter" placeholder="Global search here..." /></h2>';
+    let render = '<br><h2 class="cezam_header">Cezam. <input type="text" id="global_search"class="filter" placeholder="Global search here..." /></h2>';
     render += '<br>';
     channel_array.forEach(element => {
         render += ItemTemplate(element);
         render += '<br>';
     });
+    render += '<div id="author">'+
+                    '<b>'+
+                        '<a href="https://github.com/Sanix-Darker" target="_blank" title="By Sanix-darker">'+
+                            '<img src="https://avatars2.githubusercontent.com/u/22576758?s=40&amp;v=4" >'+
+                        '</a>'+
+                    '</br>'+
+                '</div>'
     return render;
 }

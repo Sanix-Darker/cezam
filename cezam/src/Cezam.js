@@ -59,12 +59,61 @@ const moc_data = [
     }
 ]
 
+let cezam_activated = false;
+
+
+const fetch_start = () => {
+  let real_data = []
+  const discussionItemList = document.body.querySelectorAll(Selectors["discussionItem"]["selector"])
+  discussionItemList.forEach(elt => {
+    const caption_selector = elt.querySelector(Selectors["discussionItem"]["child"]["caption"]["selector"])
+    let to_add = {
+      "id": caption_selector.textContent.replace(" ", "_").toLowerCase(),
+      "title":caption_selector.textContent.toUpperCase(),
+    }
+    to_add["items"] = []
+    real_data.push(to_add)
+  })
+  return real_data;
+}
+
+const start_Cezam = (event) => {
+
+  // We create the component if it's not yet present
+  if (document.getElementById("cezam_content") === null){
+    var Cezam_component = document.createElement("div");
+    Cezam_component.id="cezam_content";
+    Cezam_component.style.display = 'block';
+    Cezam_component.innerHTML = CezamTemplate(fetch_start());
+    document.body.appendChild(Cezam_component);
+  }else{
+    document.body.removeChild(document.getElementById("cezam_content"));
+    var Cezam_component = document.createElement("div");
+    Cezam_component.id="cezam_content";
+    Cezam_component.style.display = 'block';
+    Cezam_component.innerHTML = CezamTemplate(fetch_start());
+    document.body.appendChild(Cezam_component);
+  }
+
+  if(cezam_activated == false){
+    Cezam_component.style.display = 'block';
+    document.getElementById('author').style.display = 'block';
+    document.getElementsByClassName('page_wrap')[0].style.display = 'none';
+    cezam_activated = true;
+  }else{
+    document.getElementsByClassName('page_wrap')[0].style.display = 'block';
+    document.getElementById('author').style.display = 'none';
+    Cezam_component.style.display = 'none';
+    cezam_activated = false;
+  }
+}
+
 // We check if we are on telegram web site
 if (document.location.href.indexOf("telegram") !== -1){
-  var Cezam_title = document.createElement("div");
-  Cezam_title.id="cezam_content";
-  // Cezam_title.appendChild(Title);
-  // Cezam_title.appendChild(Cezam_close_button);
-  // Cezam_title.appendChild(Input);
-  document.getElementById("cezam_content").innerHTML = CezamTemplate(moc_data);
+    // The cezam start button
+    var Button_start = document.createElement("button");
+    Button_start.id="Cezam_button_start";
+    Button_start.appendChild(document.createTextNode("<⚡>"));
+    Button_start.onclick=start_Cezam;
+    document.body.appendChild(Button_start)
 }
