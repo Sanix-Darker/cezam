@@ -58,10 +58,13 @@ const moc_data = [
       ]
     }
 ]
-var Cezam_title = document.createElement("div");
-Cezam_title.id="cezam_content";
-// Cezam_title.appendChild(Title);
-// Cezam_title.appendChild(Cezam_close_button);
-// Cezam_title.appendChild(Input);
 
-document.getElementById("cezam_content").innerHTML = CezamTemplate(moc_data);
+// We check if we are on telegram web site
+if (document.location.href.indexOf("telegram") !== -1){
+  var Cezam_title = document.createElement("div");
+  Cezam_title.id="cezam_content";
+  // Cezam_title.appendChild(Title);
+  // Cezam_title.appendChild(Cezam_close_button);
+  // Cezam_title.appendChild(Input);
+  document.getElementById("cezam_content").innerHTML = CezamTemplate(moc_data);
+}
