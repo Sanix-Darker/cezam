@@ -1,0 +1,28 @@
+{
+  "name": "Cezam",
+  "description": "An alternative version of Telegram, but like a Room Cinema!",
+  "version": "1.0",
+  "permissions": [
+      "activeTab"
+  ],
+  "icons": {
+    "16": "img/icon-16.png",
+    "48": "img/icon-48.png"
+  },
+  "background": {
+    "scripts": ["src/Selectors.js","src/TemplatesHtml.js","src/Cezam.js"],
+    "persistent": false
+  },
+  "author": "Sanix darker",
+  "browser_action": {
+      "default_icon": "img/icon-48.png",
+      "default_title": "Cezam",
+      "default_popup": "popup.html"
+  },
+  "manifest_version": 2,
+  "content_scripts": [ {
+    "js": [ "src/Selectors.js","src/TemplatesHtml.js","src/Cezam.js" ],
+    "css": [ "src/css/style.css" ],
+    "matches": [ "http://*/*", "https://*/*"]
+  }]
+}

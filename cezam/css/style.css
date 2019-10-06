@@ -1,0 +1,129 @@
+#Embed_pane {
+	position: fixed;
+	min-width: 30%;
+	width: 30%;
+	min-height: 30%;
+	height: auto;
+	top: 2%;
+	right: 2%;
+	margin: 0;
+	padding: 10px;
+	z-index:99999999999!important;
+	border: 5px solid rgb(51, 103, 214);
+	border-top: 7px solid rgb(51, 103, 214);
+	border-radius: 4px;
+	background: rgb(51, 103, 214);
+	box-shadow: 0 5px 12px rgba(0,0,0,0.7);
+}
+#Embed_input{
+	border-radius: 7%;
+	width: 60%;
+	margin-top: -1.5%;
+    margin-right: 5%;
+	float:right;
+	padding:3px;
+	padding-bottom: 5px;
+	font-size:13px;
+}
+#Embed_content{
+	box-shadow: inset 0 4px 8px;
+	background-image: url('../img/loading.gif') center;
+	background-size: 50%;
+}
+#Embed_iframe{
+	/* position:fixed; */
+	position: absolute;
+	margin-top:-1.5%;
+	left:0;
+	width:100%;
+	height:83.5%;
+	border:0;
+    background: url(https://raw.githubusercontent.com/Sanix-Darker/Embed/master/embed/img/loading.gif) center no-repeat;
+	background-size: 25%;
+	box-shadow: inset 0 3px 5px;
+}
+#Embed_title {
+	font-family: monospace;
+	background: rgb(51, 103, 214);
+	color: white;
+	font-size: 17px;
+	height: 30px;
+	text-align: left;
+}
+#Embed_ghostpane {
+	background: #999;
+	opacity: 0.2;
+	min-width: 30%;
+	width: 30%;
+	min-height: 30%;
+	height: auto;
+	top: 2%;
+	right: 2%;
+	position: fixed;
+	margin: 0;
+	padding: 0;
+	z-index: 999999!important;
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	-ms-transition: all 0.25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+}
+
+#Title_embed{
+	float: left;
+	margin-top:-1.5%;
+}
+
+#Embed_close_button{
+	margin-top:-1.5%;
+	float: right;
+	padding: 9px;
+	border-radius: 100%;
+	cursor: pointer;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+	background: red;
+}
+
+#Embed_button_start{
+	padding: 13px;
+	border-radius: 100%;
+	transition: all 0.3s;
+	cursor:pointer;
+	border:0px;
+	position: fixed;
+	z-index: 99999999999999999999!important;
+	bottom: 2%;
+	left: 2%;
+	color:white;
+	background:rgb(51, 103, 214);
+	box-shadow: 0 4px 9px rgba(0,0,0,0.7);
+}
+
+#Embed_button_start span{
+	display: none;
+	transition: all 0.65s;
+}
+
+#Embed_button_start:hover span{
+	display: inline-block;
+	transition: all 0.65s;
+}
+
+#Embed_button_start:hover{
+	font-size: 18px;
+	padding: 20px;
+	transition: all 0.3s;
+}
+
+#goFalla{
+	cursor: pointer;
+	position: absolute;
+    bottom: 0px;
+    padding: 3px;
+    padding-right: 15px;
+    color: white;
+    left: 0;
+    border-top-right-radius: 30px;
+    background: rgb(51, 103, 214);
+}

@@ -1,5 +1,4 @@
-body,
-html {
+#cezam_content {
   padding: 0 10px;
   margin: 0;
   background: #0e0f11;
@@ -11,38 +10,38 @@ html {
   align-items: left;
   width: 100%;
 }
-* {
+#cezam_content * {
   box-sizing: border-box;
 }
-h1,
-p {
+#cezam_content h1,
+#cezam_content p {
   text-align: left;
 }
-p {
+#cezam_content p {
   width: 100%;
   max-width: 500px;
 }
-a:link,
-a:hover,
-a:active,
-a:visited {
+#cezam_content a:link,
+#cezam_content a:hover,
+#cezam_content a:active,
+#cezam_content a:visited {
   transition: color 150ms;
   color: #95a5a6;
   text-decoration: none;
 }
-a:hover {
+#cezam_content a:hover {
   color: #7f8c8d;
   text-decoration: underline;
 }
-.contain {
+#cezam_content .contain {
   width: 100%;
 }
-.row {
+#cezam_content .row {
   overflow-x: auto;
   width: 100%;
   overflow-y: hidden;
 }
-.row__inner {
+#cezam_content .row__inner {
   transition: 450ms -webkit-transform;
   transition: 450ms transform;
   transition: 450ms transform, 450ms -webkit-transform;
@@ -51,7 +50,7 @@ a:hover {
   margin: 40px 0;
   /* padding-bottom: 10px; */
 }
-.tile {
+#cezam_content .tile {
   position: relative;
   display: inline-block;
   width: 250px;
@@ -63,13 +62,13 @@ a:hover {
   -webkit-transform-origin: center left;
           transform-origin: center left;
 }
-.tile__img {
+#cezam_content .tile__img {
   width: 250px;
   height: 140.625px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.tile__details {
+#cezam_content .tile__details {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -80,15 +79,15 @@ a:hover {
   background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
   transition: 450ms opacity;
 }
-.tile__details:after,
-.tile__details:before {
+#cezam_content .tile__details:after,
+#cezam_content .tile__details:before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   display: #000;
 }
-.tile__details:after {
+#cezam_content .tile__details:after {
   margin-top: -25px;
   margin-left: -25px;
   width: 50px;
@@ -100,7 +99,7 @@ a:hover {
   background: rgba(0,0,0,0.5);
   z-index: 1;
 }
-.tile__details:before {
+#cezam_content .tile__details:before {
   content: '▶';
   left: 0;
   width: 100%;
@@ -110,33 +109,34 @@ a:hover {
   text-align: center;
   z-index: 2;
 }
-.tile:hover .tile__details {
+#cezam_content .tile:hover .tile__details {
   opacity: 1;
 }
-.tile__title {
+#cezam_content .tile__title {
   position: absolute;
   bottom: 0;
   padding: 10px;
 }
-.row__inner:hover {
+#cezam_content .row__inner:hover {
   -webkit-transform: translate3d(-62.5px, 0, 0);
           transform: translate3d(-62.5px, 0, 0);
 }
-.row__inner:hover .tile {
+#cezam_content .row__inner:hover .tile {
   opacity: 0.3;
 }
-.row__inner:hover .tile:hover {
+#cezam_content .row__inner:hover .tile:hover {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
   opacity: 1;
 }
-.tile:hover ~ .tile {
+#cezam_content .tile:hover ~ .tile {
   -webkit-transform: translate3d(125px, 0, 0);
           transform: translate3d(125px, 0, 0);
 }
 
-.sub_filter{
+#cezam_content .sub_filter{
   width: auto;
+  min-width: 40%;
   padding: 4px;
   margin-top: -10%;
   background: 0;
@@ -145,4 +145,14 @@ a:hover {
   color: white;
   outline: none;
   font-size: 20px;
+}
+
+#cezam_content #global_search{
+  padding: 4px;
+  border: 0px;
+  background: 0;
+  color: white;
+  font-size: 20px;
+  width:auto;
+  outline: none;
 }

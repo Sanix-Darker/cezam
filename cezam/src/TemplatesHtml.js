@@ -3,14 +3,14 @@ const ChannelHeadTemplate = (channel_header) => {
             '<input type="text" id="filter_'+channel_header['id']+'" class="sub_filter" onkeyup="Filter(\'filter_'+channel_header['id']+'\')" placeholder="Search on '+channel_header['title']+'...."/>';
 }
 
-const MediaTemplate = (data) => {
-    return '<div class="tile" id="media_'+data['item_id']+'">'+
+const MediaTemplate = (media_item) => {
+    return '<div class="tile" id="media_'+media_item['item_id']+'">'+
                 '<div class="tile__media">'+
-                    '<img class="tile__img" src="'+data["item_thumb"]+'" />'+
+                    '<img class="tile__img" src="'+media_item["item_thumb"]+'" />'+
                 '</div>'+
                 '<div class="tile__details">'+
                     '<div class="tile__title">'+
-                        data["item_title"]+
+                    media_item["item_title"]+
                     '</div>'+
                 '</div>'+
             '</div>';
@@ -36,9 +36,11 @@ const ItemTemplate = (channel_item) => {
 }
 
 const CezamTemplate = (channel_array) => {
-    let render =""
+    let render = '<h2>Cezam. <input type="text" id="global_search"class="filter" placeholder="Global search here..." /></h2>';
+    render += '<br>';
     channel_array.forEach(element => {
-        render += ItemTemplate(element)
+        render += ItemTemplate(element);
+        render += '<br>';
     });
     return render;
 }
