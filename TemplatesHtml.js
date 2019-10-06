@@ -1,6 +1,6 @@
 const ChannelHeadTemplate = (data) => {
     return '<h1> '+data['title']+' </h1>'+
-            '<input type="text" id="filter_'+data['id']+'" class="sub_filter" onkeyup="Filter('+data['id']+')" placeholder="Search on '+data['title']+'...."/>';
+            '<input type="text" id="filter_'+data['id']+'" class="sub_filter" onkeyup="Filter(\'filter_'+data['id']+'\')" placeholder="Search on '+data['title']+'...."/>';
 }
 
 const MediaTemplate = (data) => {
@@ -17,7 +17,7 @@ const MediaTemplate = (data) => {
 }
 
 const SliderList = (data) => {
-    let slider = '<div class="row__inner" id="row_list">';
+    let slider = '<div class="row__inner" id="row_filter_'+data['id']+'">';
     data['items'].forEach(element => {
         slider += MediaTemplate(element)
     });
@@ -27,9 +27,17 @@ const SliderList = (data) => {
 
 const ItemTemplate = (data) => {
     return '<div class="contain">'+
-                ChannelHeadTemplate(data['channel_info'])+
+                ChannelHeadTemplate(data)+
                 '<div class="row">'+
-                SliderList(data['channel_content'])+
+                SliderList(data)+
                 '</div>'+
             '</div>';
+}
+
+const CezamTemplate = (data) => {
+    let render =""
+    data['channels'].forEach(element => {
+        render += ItemTemplate(element)
+    });
+    return render;
 }
