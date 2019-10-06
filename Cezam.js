@@ -38,31 +38,28 @@ const Filter = (input) => {
     }
 }
 
-const moc_data = {
-  "channels":[
-      {
-        "id": "mood_cinema",
-        "title":"MOOD CINEMA",
-        "items":[
-          {
-            "item_id":"id_123123",
-            "item_thumb":"https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-3.jpg",
-            "item_title":"An example here",
-          },
-          {
-            "item_id":"id_1111111",
-            "item_thumb":"https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-2.jpg",
-            "item_title":"Some interesting thing here",
-          },
-          {
-            "item_id":"id_22222",
-            "item_thumb":"https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-1.jpg",
-            "item_title":"MOONLIGHT here",
-          },
-        ]
-      }
-  ]
-}
-
+const moc_data = [
+    {
+      "id": "mood_cinema",
+      "title":"MOOD CINEMA",
+      "items":[
+        {
+          "item_id":"id_123123",
+          "item_thumb":"https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-3.jpg",
+          "item_title":"An example here",
+        },
+        {
+          "item_id":"id_1111111",
+          "item_thumb":"https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-2.jpg",
+          "item_title":"Some interesting thing here",
+        },
+        {
+          "item_id":"id_22222",
+          "item_thumb":"https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-1.jpg",
+          "item_title":"MOONLIGHT here",
+        },
+      ]
+    }
+]
 
 document.getElementById("cezam_content").innerHTML = CezamTemplate(moc_data);

@@ -1,6 +1,6 @@
-const ChannelHeadTemplate = (data) => {
-    return '<h1> '+data['title']+' </h1>'+
-            '<input type="text" id="filter_'+data['id']+'" class="sub_filter" onkeyup="Filter(\'filter_'+data['id']+'\')" placeholder="Search on '+data['title']+'...."/>';
+const ChannelHeadTemplate = (channel_header) => {
+    return '<h1> '+channel_header['title']+' </h1>'+
+            '<input type="text" id="filter_'+channel_header['id']+'" class="sub_filter" onkeyup="Filter(\'filter_'+channel_header['id']+'\')" placeholder="Search on '+channel_header['title']+'...."/>';
 }
 
 const MediaTemplate = (data) => {
@@ -16,27 +16,28 @@ const MediaTemplate = (data) => {
             '</div>';
 }
 
-const SliderList = (data) => {
-    let slider = '<div class="row__inner" id="row_filter_'+data['id']+'">';
-    data['items'].forEach(element => {
+const SliderList = (channel_item_list) => {
+    let slider = "";
+    channel_item_list.forEach(element => {
         slider += MediaTemplate(element)
     });
-    slider += '</div>';
     return slider;
 }
 
-const ItemTemplate = (data) => {
+const ItemTemplate = (channel_item) => {
     return '<div class="contain">'+
-                ChannelHeadTemplate(data)+
+                ChannelHeadTemplate(channel_item)+
                 '<div class="row">'+
-                SliderList(data)+
+                    '<div class="row__inner" id="row_filter_'+channel_item['id']+'">'+
+                        SliderList(channel_item['items'])+
+                    '</div>'+
                 '</div>'+
             '</div>';
 }
 
-const CezamTemplate = (data) => {
+const CezamTemplate = (channel_array) => {
     let render =""
-    data['channels'].forEach(element => {
+    channel_array.forEach(element => {
         render += ItemTemplate(element)
     });
     return render;
