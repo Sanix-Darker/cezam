@@ -51,10 +51,10 @@ var createCezamAndFetch = () => {
 var start_Cezam = (event) => {
     // We create the component if it's not yet present
     if (document.getElementById("Cezam_button_start").getAttribute("status") === "close"){
-      if(document.getElementById("cezam_content") === null) {
-        // document.body.removeChild(document.getElementById("cezam_content"));
-        createCezamAndFetch()
+      if(document.getElementById("cezam_content") !== null) {
+        document.body.removeChild(document.getElementById("cezam_content"));
       }
+      createCezamAndFetch()
       document.getElementById("Cezam_button_start").setAttribute("status", "open");
     }else{
       document.getElementById("Cezam_button_start").setAttribute("status", "close");

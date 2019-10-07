@@ -65,7 +65,7 @@ var ChannelHeadTemplate = (channel_header) => {
   },
   [ img,
     document.createTextNode(
-      channel_header['title']+' '+
+      '   '+channel_header['title']+' '+
       ((parseInt(channel_header['badge']) > 0) ? '('+channel_header['badge']+')' : '')
     ),
     spin

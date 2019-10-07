@@ -4,7 +4,7 @@ var sleep = (ms) => {
 
 var global_thumb = [];
 
-async function fetch_items (id, scroll_level=100) {
+async function fetch_items (id, scroll_level=300) {
     const row_component = document.getElementById("row_filter_"+id.replace("this_", ""));
     row_component.innerHTML = "<h2>Loading elements...</h2>";
     document.getElementById("filter_"+id.replace("this_", "")).style.display = 'block';
@@ -22,14 +22,15 @@ async function fetch_items (id, scroll_level=100) {
     for (let i = 0; i < scroll_level; i++) {
         document.body.querySelector(messageList["selector"]).scrollTo(0, 100);
         console.log("Scrolling....");
-        await sleep(100);
+        await sleep(500);
     }
     const messageMediaPhotoItem = Selectors["messageMediaPhotoItem"];
     const messageMediaPhotoItem_child = messageMediaPhotoItem["child"];
     let PhotoItemList = document.body.querySelector(messageList["selector"]).querySelectorAll(messageMediaPhotoItem["selector"]);
     let count = 1;
     let array_items = [];
-    PhotoItemList.forEach(elt2 => {
+    for(let i=0; i<PhotoItemList.length; i++){
+        const elt2 = PhotoItemList[i];
         let title = "...";
         try{ title = elt2.querySelector(messageMediaPhotoItem_child["caption"]["selector"]).textContent.substring(0, 40) + "..."; }catch(err){ console.log(err) }
         let thumb = elt2.querySelector(messageMediaPhotoItem_child["media"]["child"]["thumb"]["selector"]).getAttribute("src");
@@ -45,10 +46,8 @@ async function fetch_items (id, scroll_level=100) {
             global_thumb.push(thumb);
             count ++;
         }
-        if(count == 30){
-            break;
-        }
-    });
+        if(count == 20){ break; }
+    }
     const SliderListHTML = SliderList(array_items).innerHTML;
     console.log(">>>>>>>>>>>>>>>")
     console.log(">>> SliderListHTML: ", SliderListHTML)
