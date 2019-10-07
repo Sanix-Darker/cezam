@@ -21,7 +21,7 @@
   },
   "manifest_version": 2,
   "content_scripts": [ {
-    "js": [ "src/Selectors.js","src/TemplatesHtml.js","src/Cezam.js" ],
+    "js": [ "src/Selectors.js","src/Cezam.js" ],
     "css": [ "src/css/style.css" ],
     "matches": [ "http://*/*", "https://*/*"]
   }]
