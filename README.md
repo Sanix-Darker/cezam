@@ -1,56 +1,36 @@
 <img src="logo.jpg" />
 
-# Cezam.
+# Cezam
 
-A Browser Extension allowing you to watch videos or browse externals links everywhere in your browser!
+***"Hacker" is not synonymous with criminal. A hacker is someone who finds a new and different way to do something. #Breakthrough***
 
 ### Introduction
-I do not know if this is a whim or a need that haunts me, because I know I'm not alone sometimes in this situation! Having several tabs open on my browser including youtube for example, it gives me to have to change tabs to have a scene or to pause on a video that is in progress, not just the videos but who never wanted to be both on wikkipedia and see a video on youtube at the same time? And why stop there? Browse other sites or search directly in the same place!
 
-### Features
+This project began as a night project and finaly am getting more interested on finish it.
 
-- Watch videos in every tab on your browser (such as youtube).
-- Browser externals link in the same place.
-- Do some research, etc.. (bing search engine used here).
-- light, Resizable, Dragable box.
+Telegram is the one of the biggest chat platform i know right now and i mostly use it because of it's channels; there are tones and tones of channels of movies, animes, pictures, available for free there.
+The idea behind Cezam was build an alternative UI of telegram as a Gallery for movies/series/pictures.
+
+STATUS : ON GOING...
 
 ## Requirements
 
 - Chrome browser (Any version supporting the extensions Feature).
-- Developper tools activated (n case this extension is not allready on Chrome store).
+- Cezam was coded from scratch, any lib used.
 
 ### How it's works
 
-- When a link is given to Embed, it generate a clone of the website you want to access.
-- Some WebSite blocks that, so don't be surprise to get an empty preview.
-- For Youtube, it's generate an embed video.
-- When a text is given, the text do a simple request to bing.
+Cezam just inject in the DOM some JS to create it's own UI based on telegramWEB real datas.
+A more Readme/Documentation will be provide after the project will be too advanced.
 
 ### How to use it
 
-> See the <a href="https://youtu.be/OTYhsvwlsmc" target="_blank">INSTALLATION VIDEO</a>
-> And <a href="https://youtu.be/d0GykE_UcN4" target="_blank">HOW TO USE EMBED</a>
-
-* Enable the Developper Mode a top right in your "chrome://extensions" settings page.
-* Integrate the Extension in your browser see how to do here (<a href="https://youtu.be/OTYhsvwlsmc">Integration demo</a>) the extension is not yet on a store so....
-* A button will automatically appear on each webpage you browse after a reload, at the bottom-left.
-* Hit the "Open Embed" button.
-* Get a link or a text you want to search, paste it in the link input.
-* Press Enter and "Embed" will handle all.
+- Menu > More Tools > Extensions
+- Just import the `./cezam` directory by clicking on `load unpacked` Extension.
 
 ### Rendering
 
-<img src="render.PNG" />
-
-### TODO (for potentials contributors)
-
-- [ ] Handle a kind of history of link visited or video watched.
-- [ ] Manage playlist on youtube list.
-- [ ] Hndle more website by passing the SAME_ORIGIN restriction.
-- [ ] Synchronize Embe on each tab.
-- [ ] Open multiple Embed boxes or just works with tabs.
-- [ ] Been able to launch Embed when Chrome is close and use it everywhere on the PC.
-- [ ] Add a instant Chat for a specific link/video for all user using Embed at the same time.
+<img src="cezam.gif" />
 
 ### Author
 
