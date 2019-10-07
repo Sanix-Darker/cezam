@@ -1,7 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////// TEMPLATE BUILDER ///////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////
-
 /**
  * This method allow me to create DOM elements
  * @param {*} idd 
@@ -146,6 +145,8 @@ var CezamTemplate = (channel_array) => {
   var B = createElement("b",{});
   // The <br> component
   var Br = createElement("br",{});
+  // The <hr> component
+  var Hr =  createElement("hr",{});
 
   // The filter input text
   var filter = createElement("input",{
@@ -157,7 +158,7 @@ var CezamTemplate = (channel_array) => {
 
   // The complete header
   var h2 = createElement("h2",{
-    "className": "cezam_header"
+    "className": "cezam_header headd"
   },
   [Br, document.createTextNode("Cezam. "), filter, Br]);
 
@@ -166,9 +167,11 @@ var CezamTemplate = (channel_array) => {
     "href":"https://github.com/Sanix-Darker",
     "title":"By Sanix-darker",
     "target":"_blank",
-  }, [createElement("img",{
-    "src": "https://avatars2.githubusercontent.com/u/22576758?s=40&amp;v=4",
-  }) ]);
+  }, [
+    createElement("img",{
+      "src": "https://avatars2.githubusercontent.com/u/22576758?s=40&amp;v=4",
+    })
+  ]);
 
   // The div body
   var author = createElement("div",{
@@ -180,11 +183,10 @@ var CezamTemplate = (channel_array) => {
   to_append.appendChild(h2);
   channel_array.forEach(element => {
       to_append.appendChild(ItemTemplate(element));
-      to_append.appendChild(Br);
+      to_append.appendChild(Hr);
   });
   to_append.appendChild(author);
-
   return to_append;
 }
-  ///////////////////////////////////////////////////////////////////////////////////////
-  ///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////

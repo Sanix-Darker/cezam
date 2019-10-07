@@ -2,27 +2,27 @@ var sleep = (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function fetch_items (id, scroll_level=300) {
+var global_thumb = [];
+
+async function fetch_items (id, scroll_level=100) {
     const row_component = document.getElementById("row_filter_"+id.replace("this_", ""));
-
     row_component.innerHTML = "<h2>Loading elements...</h2>";
-
     document.getElementById("filter_"+id.replace("this_", "")).style.display = 'block';
     console.log("} Fetching items }--------->>>");
     const messageList = Selectors["messageList"];
 
-    try{
-        // We empty the precedent messageList
-        document.body.querySelector(messageList["to_empty"]).innerHTML = "";
-    }catch(err){ console.log(err); }
+    // try{
+    //     // We empty the precedent messageList
+    //     document.body.querySelector(messageList["to_empty"]).innerHTML = "";
+    // }catch(err){ console.log(err); }
 
     const target = document.getElementById(id);
     target.querySelector(Selectors["discussionItem"]["trigger"]).dispatchEvent(new Event('mousedown'));
-    await sleep(700);
+    await sleep(300);
     for (let i = 0; i < scroll_level; i++) {
-        document.body.querySelector(messageList["selector"]).scrollTo(0, 10);
+        document.body.querySelector(messageList["selector"]).scrollTo(0, 100);
         console.log("Scrolling....");
-        await sleep(500);
+        await sleep(100);
     }
     const messageMediaPhotoItem = Selectors["messageMediaPhotoItem"];
     const messageMediaPhotoItem_child = messageMediaPhotoItem["child"];
@@ -33,13 +33,21 @@ async function fetch_items (id, scroll_level=300) {
         let title = "...";
         try{ title = elt2.querySelector(messageMediaPhotoItem_child["caption"]["selector"]).textContent.substring(0, 40) + "..."; }catch(err){ console.log(err) }
         let thumb = elt2.querySelector(messageMediaPhotoItem_child["media"]["child"]["thumb"]["selector"]).getAttribute("src");
-        const item_to_add = {
-        "item_id": "id_" + count,
-        "item_thumb": thumb,
-        "item_title": title,
-        };
-        array_items.push(item_to_add);
-        count ++;
+
+        // We remove a thumb if it's allready present
+        if(global_thumb.indexOf(thumb) === -1){
+            const item_to_add = {
+                "item_id": "id_" + count,
+                "item_thumb": thumb,
+                "item_title": title,
+            };
+            array_items.push(item_to_add);
+            global_thumb.push(thumb);
+            count ++;
+        }
+        if(count == 30){
+            break;
+        }
     });
     const SliderListHTML = SliderList(array_items).innerHTML;
     console.log(">>>>>>>>>>>>>>>")
@@ -47,13 +55,8 @@ async function fetch_items (id, scroll_level=300) {
     console.log(">>>>>>>>>>>>>>>")
     console.log("---> row_filter_"+id.replace("this_", ""))
     console.log(">>>>>")
-    if (SliderListHTML.length == 0){
-        row_component.innerHTML = "<h2>Nothing fetched!</h2>";
-    }else{
-        row_component.innerHTML = SliderListHTML;
-    }
-
-    row_component.innerHTML += "<hr>";
+    row_component.innerHTML = (SliderListHTML.length == 0) ? "<h2>Nothing fetched!</h2>" : SliderListHTML;
+    //row_component.innerHTML += "<hr>";
 }
 
 
