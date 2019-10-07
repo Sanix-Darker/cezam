@@ -76,10 +76,11 @@ function sleep(ms) {
 }
 
 async function fetch_items (id, scroll_level=50) {
-  console.log("} Fetching items }--------->>>")
+  console.log("} Fetching items }--------->>>");
   const messageList = Selectors["messageList"];
   const target = document.getElementById(id);
   target.querySelector(Selectors["discussionItem"]["trigger"]).dispatchEvent(new Event('mousedown'));
+  await sleep(3500);
   for (let i = 0; i < scroll_level; i++) {
     document.body.querySelector(messageList["selector"]).scrollTo(0, 100);
     console.log("Scrolling....");
@@ -92,21 +93,17 @@ async function fetch_items (id, scroll_level=50) {
   let array_items = [];
   PhotoItemList.forEach(elt2 => {
     let title = "...";
-    try{
-      title = elt2.querySelector(messageMediaPhotoItem_child["caption"]["selector"]).textContent.substring(0, 40) + "...";
-    }catch(err){ console.log(err) }
+    try{ title = elt2.querySelector(messageMediaPhotoItem_child["caption"]["selector"]).textContent.substring(0, 40) + "..."; }catch(err){ console.log(err) }
     let thumb = elt2.querySelector(messageMediaPhotoItem_child["media"]["child"]["thumb"]["selector"]).getAttribute("src");
     const item_to_add = {
       "item_id": "id_" + count,
       "item_thumb": thumb,
       "item_title": title,
-    }
+    };
     array_items.push(item_to_add);
     count ++;
   });
   let sliderList = SliderList(array_items);
-  // console.log('> array_items: ', array_items)
-  // console.log('> sliderList: ', sliderList)
   document.getElementById("row_filter_"+id.replace("this_", "")).innerHTML = sliderList;
 }
 
@@ -163,6 +160,7 @@ const start_Cezam = (event) => {
 
 // We check if we are on telegram web site
 if (document.location.href.indexOf("telegram") !== -1){
+  createCezamAndFetch()
     setTimeout(() => {
       // The cezam start button
       var Button_start = document.createElement("button");
