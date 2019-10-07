@@ -4,12 +4,10 @@
  */
 
 // class Cezam{
-
 //     constructor(DOMhtml){
 //         this.doc = new DOMParser().parseFromString(DOMhtml, "text/html");
 //     }
-//     start(){
-//     }
+//     start(){ }
 // }
 
 const findAncestor = (el, cls) => {
@@ -160,7 +158,6 @@ const start_Cezam = (event) => {
 
 // We check if we are on telegram web site
 if (document.location.href.indexOf("telegram") !== -1){
-  createCezamAndFetch()
     setTimeout(() => {
       // The cezam start button
       var Button_start = document.createElement("button");

@@ -1,6 +1,6 @@
-<img src="logo.PNG" />
+<img src="logo.jpg" />
 
-# Embed.
+# Cezam.
 
 A Browser Extension allowing you to watch videos or browse externals links everywhere in your browser!
 
