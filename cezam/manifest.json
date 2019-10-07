@@ -10,7 +10,7 @@
     "48": "img/icon-48.png"
   },
   "background": {
-    "scripts": ["src/Cezam.js"],
+    "scripts": ["src/main.js"],
     "persistent": false
   },
   "author": "Sanix darker",
@@ -21,7 +21,7 @@
   },
   "manifest_version": 2,
   "content_scripts": [ {
-    "js": [ "src/Selectors.js","src/Cezam.js" ],
+    "js": [ "src/Selectors.js","src/Templates.js","src/Fetchers.js","src/main.js" ],
     "css": [ "src/css/style.css" ],
     "matches": [ "http://*/*", "https://*/*"]
   }]
